@@ -16,12 +16,18 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-  <div id="header" class="logo-lg header">
-		<h1 class="header_title">
+  <div id="header" class="logo-lg header_wrapper">
+		<h1 class="header_item">
 			<img class="main_img" src="./img/yakinikubanner.jpg" alt="焼き肉実践塾">
-			<span class="logo-lg">予約管理システム</span>		
 		</h1>
-  </div>
+		<div class="title">
+				<p class="logo-lg">予約管理システム</p>
+		</div>
+	</div>
+	<ul id="progress" class="steps">
+		<li class="step now">予約内容の入力</li>
+		<li class="step">予約完了</li>
+	</ul>
   <div id="forms" class="form_wrapper">
     <form action="reserve_post.php" method="POST">
       <div class="form">
@@ -82,14 +88,13 @@
 			</div>
 			</div>
 			<div class="submit_form">
-				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
+				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する" onClick="submitReserve()">
 				<a href="/" class="cancel">予約キャンセル</a>
 			</div>
 	</form>
   </div>
 	
 </div>
-<script>
-</script>
+<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
