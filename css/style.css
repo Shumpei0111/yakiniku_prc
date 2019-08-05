@@ -1,22 +1,102 @@
 body {
   max-width: 880px;
   font-size: 16px;
+  font-family: "Noto Sans JP", YuGothic, "Hiragino Kaku Gothic ProN", "Yu Gothic M", Arial;
 }
 
-#logo.logo-lg {
-  /* font-size:24px; */
-  color: #af1a1a;
+a {
+  text-decoration: none;
+}
+
+#header.header{
+  margin-bottom: 30px;
+  padding: 20px 0 30px;
+  border-bottom: 1px solid #bebebe;
+}
+
+#header .header_title {
   display: flex;
+  align-items: center;
 }
 
-#logo .main_img {
-  width: 80px;
+#header.logo-lg {
+  color: #af1a1a;
+  font-weight: 700;
+}
+
+#header .main_img {
+  width: 60px;
+  margin-right: 24px;
 }
 
 .w30 {
   width:30px;
 }
 
-.w100{
+/* .w100{
   width:100px;
+} */
+
+#forms .form{
+  background: #f7f7f7;
+  border-bottom: 1px solid #bebebe;
+  display: flex;
+  align-items: center;
+}
+
+#forms .f_title{
+  padding: 20px;
+}
+
+#forms .w100, #forms .w30 {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#forms .form .f_title {
+  width: 150px;
+}
+
+#forms .form .f_title.mst:before {
+  content: "必須";
+  background-color: #e73838;
+  color: #ffffff;
+  font-size: 0.5rem;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#forms .choice {
+  padding: 20px 0;
+}
+
+#forms .choice label:first-child {
+  margin-right: 0;
+}
+
+#forms .choice label {
+  margin-right: 13px;
+}
+
+#forms .submit_form {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+#forms .submit_form .sub_btn {
+  margin-right: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #af1a1a;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+#forms .submit_form .cancel {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  
 }
