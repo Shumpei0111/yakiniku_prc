@@ -98,5 +98,9 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  
+
+  #forms .form {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
 }

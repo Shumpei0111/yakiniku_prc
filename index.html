@@ -56,18 +56,30 @@
 			</div>
 			<div class="form">
 				<label class="f_title mst" for="quantity">人数</label>
-				<input type="text" class="w30" id="quantity" name="quantity" placeholder="人数" value="">人
+				<div class="included">
+					<input type="text" class="w30" id="quantity" name="quantity" placeholder="人数" value=""><span>人</span>
+				</div>
 			</div>
 			<div class="form choice">
 				<label class="f_title mst">席タイプ</label>
-				<input type="radio" id="seat_type_0" name="seat_type" value="box"><label for="seat_type_0">ボックス席</label>
-				<input type="radio" id="seat_type_1" name="seat_type" value="counter"><label for="seat_type_1">カウンター</label>
-				<input type="radio" id="seat_type_2" name="seat_type" value="table"><label for="seat_type_2">テーブル席</label>
+				<div class="included">
+					<input type="radio" id="seat_type_0" name="seat_type" value="box"><label for="seat_type_0">ボックス席</label>
+				</div>
+				<div class="included">
+					<input type="radio" id="seat_type_1" name="seat_type" value="counter"><label for="seat_type_1">カウンター</label>
+				</div>
+				<div class="included">
+					<input type="radio" id="seat_type_2" name="seat_type" value="table"><label for="seat_type_2">テーブル席</label>
+				</div>
 			</div>
 			<div class="form choice">
 				<label class="f_title mst">喫煙</label>
+			<div class="included">
 				<input type="checkbox" id="seat_smoke_0" name="seat_smoke" value="0"><label for="seat_smoke_0">禁煙席</label>
+			</div>
+			<div class="included">
 				<input type="checkbox" id="seat_smoke_1" name="seat_smoke" value="1"><label for="seat_smoke_1">喫煙席</label>
+			</div>
 			</div>
 			<div class="submit_form">
 				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
