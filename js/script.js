@@ -21,5 +21,14 @@ new Vue({
         return this.v_quantity_adult + this.v_quantity_child
       },
     }
+  },
+  methods: {
+    checkForm: function() {
+      var el = document.getElementById("res");
+      var back = document.getElementById("back");
+
+      back.classList.add("on");
+      el.classList.add("on");
+    }
   }
 })

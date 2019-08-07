@@ -13,6 +13,10 @@ input {
   vertical-align: baseline;
 }
 
+#app {
+  position: relative;
+}
+
 #header.logo-lg {
   color: #af1a1a;
   font-weight: 700;
@@ -121,6 +125,41 @@ input {
 
 #forms .submit_form .cancel {
   font-size: 0.9rem;
+}
+
+#res.form_res {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+#res.on {
+  height: auto;
+  opacity: 1;
+  background: #fff;
+  top: 5%;
+  position: fixed;
+  z-index: 999;
+  max-width: 80vw;
+  max-height: 90vh;
+  align-items: stretch;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+}
+
+#back.on {
+  position: fixed;
+  background: #3b3b3b;
+  opacity: 0.8;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 #progress.steps {
