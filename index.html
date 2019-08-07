@@ -30,22 +30,22 @@
 		<li class="step">予約完了</li>
 	</ul>
   <div id="forms" class="form_wrapper">
-    <form action="reserve_post.php" method="POST" @submit="checkForm">
+    <form action="reserve_post.php" method="POST">
       <div class="form">
-				<label class="f_title mst" for="phone_no">電話番号（ハイフンなし）</label>
-				<input v-model="v_phone_no" type="text" class="w100 wide_input" id="phone_no" name="phone_no" placeholder="0120333906" value="">
+				<label class="f_title mst" for="phone_no">電話番号（半角・ハイフンなし）</label>
+				<input required v-model="v_phone_no" type="tel" pattern="[\d]*" title="半角かつハイフンなしの数字を入力してください" class="w100 wide_input" id="phone_no" name="phone_no" placeholder="012033334444" value="" minlength="11" maxlength="11">
 			</div>
 			<div class="form">
-				<label class="f_title mst" for="client_name">お名前（カナ入力）</label>
-				<input v-model="v_client_name" type="text" class="w100 wide_input" id="client_name" name="client_name" placeholder="オナマエ" value="">
+				<label class="f_title mst" for="client_name">お名前（ひながな・カナ）</label>
+				<input required v-model="v_client_name" type="text" class="w100 wide_input" id="client_name" name="client_name" placeholder="ひらがなかカタカナで入力" value="" pattern="[ァ-ヶー　ぁ-ゞ]*" title="全角ひらがな・カタカナで入力してください">
 			</div>
 			<div class="form">
 				<label class="f_title mst" for="reserve_date">予約日</label>
-				<input v-model="v_reserve_date" type="text" class="w100" id="reserve_date" name="reserve_date" placeholder="YYYY-MM-DD" value="">
+				<input required v-model="v_reserve_date" type="text" class="w100" id="reserve_date" name="reserve_date" placeholder="YYYY-MM-DD" value="">
 			</div>
 			<div class="form">
 				<label class="f_title mst" for="reserve_time">予約時刻</label>
-				<select v-model="v_reserve_time" class="w100" id="reserve_time" name="reserve_time">
+				<select required v-model="v_reserve_time" class="w100" id="reserve_time" name="reserve_time">
 					<option disabled="disabled"> --▼選択してください-- </option>
 					<option value="17:00">17時00分</option>
 					<option value="17:30">17時30分</option>
@@ -83,49 +83,56 @@
 			<div class="form choice">
 				<label class="f_title mst">席タイプ</label>
 				<div class="included">
-					<input type="radio" v-model="v_seat_type" id="seat_type_0" name="seat_type" value="ボックス席"><label for="seat_type_0">ボックス席</label>
+					<input required type="radio" v-model="v_seat_type" id="seat_type_0" name="seat_type" value="ボックス席"><label for="seat_type_0">ボックス席</label>
 				</div>
 				<div class="included">
-					<input type="radio" v-model="v_seat_type" id="seat_type_1" name="seat_type" value="カウンター"><label for="seat_type_1">カウンター</label>
+					<input required type="radio" v-model="v_seat_type" id="seat_type_1" name="seat_type" value="カウンター"><label for="seat_type_1">カウンター</label>
 				</div>
 				<div class="included">
-					<input type="radio" v-model="v_seat_type" id="seat_type_2" name="seat_type" value="テーブル席"><label for="seat_type_2">テーブル席</label>
+					<input required type="radio" v-model="v_seat_type" id="seat_type_2" name="seat_type" value="テーブル席"><label for="seat_type_2">テーブル席</label>
 				</div>
 			</div>
 			<div class="form choice">
 				<label class="f_title mst">喫煙</label>
-			<div class="included">
-				<input type="radio" v-model="v_seat_smoke" id="seat_smoke_0" name="seat_smoke" value="禁煙席"><label for="seat_smoke_0">禁煙席</label>
+				<div class="included">
+					<input required type="radio" v-model="v_seat_smoke" id="seat_smoke_0" name="seat_smoke" value="禁煙席"><label for="seat_smoke_0">禁煙席</label>
+				</div>
+				<div class="included">
+					<input required type="radio" v-model="v_seat_smoke" id="seat_smoke_1" name="seat_smoke" value="喫煙席"><label for="seat_smoke_1">喫煙席</label>
+				</div>
 			</div>
-			<div class="included">
-				<input type="radio" v-model="v_seat_smoke" id="seat_smoke_1" name="seat_smoke" value="喫煙席"><label for="seat_smoke_1">喫煙席</label>
-			</div>
+			<div class="form">
+				<label for="others" class="f_title any">備考</label>
+				<textarea v-model="v_others" name="others" id="others_notice" cols="30" rows="10" placeholder="備考欄">{{ v_others }}</textarea>
 			</div>
 			<div class="submit_form">
-				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
+				<!-- <input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する"> -->
+				<span>a</span>
 				<a href="/" class="cancel">予約キャンセル</a>
 			</div>
+		<div class="form_res">
+				<p>電話番号</p>
+				<p>{{ v_phone_no }}</p>
+				<p>お名前</p>
+				<p>{{ v_client_name }}</p>
+				<p>予約日</p>
+				<p>{{ v_reserve_date }}</p>
+				<p>予約時刻</p>
+				<p>{{ v_reserve_time }}</p>
+				<p>人数：大人（運転される方がいるか確認してください）</p>
+				<p>{{ v_quantity_adult }}</p>
+				<p>人数：子供</p>
+				<p>{{ v_quantity_child }}</p>
+				<p>合計人数</p>
+				<p>{{ v_quantity_adult + v_quantity_child }}</p>
+				<p>席タイプ</p>
+				<p>{{ v_seat_type }}</p>
+				<p>喫煙</p>
+				<p>{{ v_seat_smoke }}</p>
+				<p>備考</p>
+				<p>{{ v_others }}</p>
+			</div>
 	</form>
-	</div>
-	<div class="form_res">
-		<p>電話番号</p>
-		<p>{{ v_phone_no }}</p>
-		<p>お名前</p>
-		<p>{{ v_client_name }}</p>
-		<p>予約日</p>
-		<p>{{ v_reserve_date }}</p>
-		<p>予約時刻</p>
-		<p>{{ v_reserve_time }}</p>
-		<p>人数：大人（運転される方がいるか確認してください）</p>
-		<p>{{ v_quantity_adult }}</p>
-		<p>人数：子供</p>
-		<p>{{ v_quantity_child }}</p>
-		<p>合計人数</p>
-		<p>{{ v_quantity_adult + v_quantity_child }}</p>
-		<p>席タイプ</p>
-		<p>{{ v_seat_type }}</p>
-		<p>喫煙</p>
-		<p>{{ v_seat_smoke }}</p>
 	</div>
 	<div id="footer" class="footer_wrapper">
 		<p>copyright YJissen / Shumpei All Rights Reserved.</p>

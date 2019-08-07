@@ -79,6 +79,16 @@ input {
   border-radius: 4px;
 }
 
+#forms .form .f_title.any:before {
+  content: "任意";
+  background-color: #3e51be;
+  color: #ffffff;
+  font-size: 0.5rem;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
 #forms .choice label:first-child {
   margin-right: 0;
 }
@@ -159,7 +169,4 @@ input {
     width: 250px;
   }
 
-  /* #forms .included {
-    width: 250px;
-  } */
 }
