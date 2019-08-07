@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  vertical-align: baseline;
+}
+
 #header.logo-lg {
   color: #af1a1a;
   font-weight: 700;
@@ -27,6 +31,10 @@ a {
   color: #ffffff;
   font-size: 1.2rem;
   padding: 23px;
+}
+
+#forms {
+  margin: 60px 0;
 }
 
 .w30 {
@@ -48,13 +56,17 @@ a {
   padding: 20px;
 }
 
+#forms .wide_input {
+  width: 40%;
+}
+
 #forms .w100, #forms .w30 {
   padding: 10px;
   margin-right: 10px;
 }
 
 #forms .form .f_title {
-  width: 150px;
+  width: 300px;
 }
 
 #forms .form .f_title.mst:before {
@@ -65,10 +77,6 @@ a {
   margin-right: 10px;
   padding: 5px;
   border-radius: 4px;
-}
-
-#forms .choice {
-  padding: 20px 0;
 }
 
 #forms .choice label:first-child {
@@ -135,10 +143,23 @@ a {
   top: 0px;
 }
 
+#footer.footer_wrapper {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
 @media screen and (max-width: 768px) {
 
   #forms .form {
     flex-direction: column;
     padding-bottom: 20px;
   }
+
+  #forms .wide_input {
+    width: 250px;
+  }
+
+  /* #forms .included {
+    width: 250px;
+  } */
 }
