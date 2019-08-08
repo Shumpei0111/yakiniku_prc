@@ -38,7 +38,7 @@
 			<div class="form">
 				<label class="f_title mst" for="reserve_time">予約時刻</label>
 				<select required v-model="v_reserve_time" class="w100" id="reserve_time" name="reserve_time">
-					<option disabled="disabled"> --▼選択してください-- </option>
+					<option value="none" selected="selected"> --▼選択してください-- </option>
 					<option value="17:00">17時00分</option>
 					<option value="17:30">17時30分</option>
 					<option value="18:00">18時00分</option>
@@ -103,14 +103,14 @@
 			</div>
 			<div class="form">
 				<label for="others" class="f_title any">備考</label>
-				<textarea v-model="v_others" name="others" id="others_notice" cols="30" rows="10" placeholder="備考欄">{{ v_others }}</textarea>
+				<textarea v-model="v_others" name="others" id="others_notice" cols="50" rows="6" placeholder="備考欄">{{ v_others }}</textarea>
 			</div>
 			<div class="submit_form">
 				<!-- <input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する"> -->
-				<span @click="checkForm">内容を確認する</span>
+				<span @click="onCheckForm">内容を確認する</span>
 				<a href="/" class="cancel">予約キャンセル</a>
 			</div>
-		<div id="back"></div>
+		<div id="back" @click="offBack"></div>
 		<div id="res" class="form_res">
 			<p>電話番号</p>
 			<p>{{ v_phone_no }}</p>
@@ -132,6 +132,9 @@
 			<p>{{ v_seat_smoke }}</p>
 			<p>備考</p>
 			<p>{{ v_others }}</p>
+			<div>
+				<span id="off" @click="offCheckForm">colse</span>
+			</div>
 		</div>
 	</form>
 	</div>
