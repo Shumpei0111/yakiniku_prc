@@ -65,15 +65,16 @@
 				<label class="f_title mst" for="quantity">人数</label>
 				<div class="included">
 					<ul>
-						<li>
+						<li class="c_members">
 							<span>大人</span>
 							<input v-model.number="v_quantity_adult" type="number" class="w30" id="quantity_adult" name="quantity" placeholder="人数" value="" min="1"><span>人</span>
+							<!-- <p class="alc_att">（運転される方がいるか確認してください）</p> -->
 						</li>
-						<li>
+						<li class="c_members">
 							<span>子供</span>
 							<input v-model.number="v_quantity_child" type="number" class="w30" id="quantity_child" name="quantity" placeholder="人数" value="" min="0"><span>人</span>
 						</li>
-						<li>
+						<li class="c_members">
 							<span>合計</span>
 							<span>{{ v_quantity_res }}</span><span>人</span>
 						</li>
@@ -105,36 +106,60 @@
 				<label for="others" class="f_title any">備考</label>
 				<textarea v-model="v_others" name="others" id="others_notice" cols="50" rows="6" placeholder="備考欄" class="form_other">{{ v_others }}</textarea>
 			</div>
-			<div class="submit_form">
-				<!-- <input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する"> -->
-				<span @click="onCheckForm" class="sub_btn">内容を確認する</span>
-				<a href="/" class="cancel">予約キャンセル</a>
-			</div>
-		<div id="back"></div>
 		<div id="res" class="form_res">
-			<p>電話番号</p>
-			<p>{{ v_phone_no }}</p>
-			<p>お名前</p>
-			<p>{{ v_client_name }}</p>
-			<p>予約日</p>
-			<p>{{ v_reserve_date }}</p>
-			<p>予約時刻</p>
-			<p>{{ v_reserve_time }}</p>
-			<p>人数：大人（運転される方がいるか確認してください）</p>
-			<p>{{ v_quantity_adult }}</p>
-			<p>人数：子供</p>
-			<p>{{ v_quantity_child }}</p>
-			<p>合計人数</p>
-			<p>{{ v_quantity_adult + v_quantity_child }}</p>
-			<p>席タイプ</p>
-			<p>{{ v_seat_type }}</p>
-			<p>喫煙</p>
-			<p>{{ v_seat_smoke }}</p>
-			<p>備考</p>
-			<p>{{ v_others }}</p>
-			<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
-			<div>
-				<span id="off" @click="offCheckForm">colse</span>
+			<div class="staff_attention">
+				<p class="att_ttl">予約内容確認</p>
+				<p class="att_txt">内容を確認し、電話中に復唱してください</p>
+			</div>
+			<ul class="chk_items">
+				<li class="item_ttl">電話番号</li>
+				<ul class="add_item">
+					<li>{{ v_phone_no }}</li>
+				</ul>
+				<li class="item_ttl">お名前</li>
+				<ul class="add_item">
+					<li>{{ v_client_name }}</li>
+				</ul>
+				<li class="item_ttl">予約日</li>
+				<ul class="add_item">
+					<li>{{ v_reserve_date }}</li>
+				</li>
+				<li class="item_ttl">予約時刻</li>
+				<ul class="add_item">
+					<li>{{ v_reserve_time }}</li>
+				</ul>
+				<li class="item_ttl">人数</li>
+				<ul class="member_lists">
+					<li>大人</li>
+					<ul class="add_item">
+						<li>{{ v_quantity_adult }}人</li>
+					</ul>
+					<li>子供</li>
+					<ul class="add_item">
+						<li>{{ v_quantity_child }}人</li>
+					</ul>
+				</ul>
+				<li class="item_ttl">合計人数</li>
+				<ul class="add_item">
+					<li>{{ v_quantity_adult + v_quantity_child }}人</li>
+				</ul>
+				<li class="item_ttl">席タイプ</li>
+				<ul class="add_item">
+					<li>{{ v_seat_type }}</li>
+				</ul>
+				<li class="item_ttl">喫煙</li>
+				<ul class="add_item">
+					<li>{{ v_seat_smoke }}</li>
+				</ul>
+				<li class="item_ttl">備考</li>
+				<ul class="add_item">
+						<li>{{ v_others }}</li>
+				</ul>
+			</ul>
+			</ul>
+			<div class="submit_form">
+				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
+				<a href="/" class="cancel">予約キャンセル</a>
 			</div>
 		</div>
 	</form>

@@ -39,7 +39,7 @@ input {
 }
 
 #forms {
-  margin: 60px 0;
+  margin: 20px 0 40px;;
 }
 
 .w30 {
@@ -55,10 +55,18 @@ input {
   border-bottom: 1px solid #bebebe;
   display: flex;
   align-items: center;
+  padding: 20px 10px;
+}
+
+#forms .form:first-child {
+  border-top: 2px solid #af1a1a
 }
 
 #forms .f_title{
   padding: 20px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 
 #forms .wide_input {
@@ -134,45 +142,58 @@ input {
   padding: 10px 0;
 }
 
-#res.form_res {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.3s ease;
+#forms .form_other {
+  margin: 20px 0;
 }
 
-#res.on {
-  height: auto;
-  opacity: 1;
-  background: #fff;
-  top: 5%;
-  position: fixed;
-  z-index: 999;
-  width: 880px;
+#forms .form .included .c_members {
+  margin: 8px 0;
+}
+
+#forms .form .included .c_members:last-child {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #bebebe;
+}
+
+#res {
+  width: 60%;
+  margin: 54px auto;
+}
+
+#res .staff_attention {
+  margin-bottom: 24px;
+  text-align: center;
   padding: 24px;
+  border-bottom: 1px solid #bebebe;
 }
 
-#back.on {
-  position: fixed;
-  background: #3b3b3b;
-  opacity: 0.8;
-  z-index: 2;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  left: 0;
+#res .staff_attention .att_ttl{
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+#res .chk_items .add_item {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+#res .member_lists {
+  display: flex;
+}
+
+#res .member_lists .add_item{
+  margin: 0 16px;
 }
 
 #progress.steps {
   display: flex;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 #progress .step {
   background: #ffcdcd;
-  padding: 10px 20px; 
+  padding: 10px 50px; 
   font-size: 0.7rem;
   color: #ffffff;
 }
@@ -198,6 +219,7 @@ input {
 #footer.footer_wrapper {
   text-align: center;
   font-size: 0.8rem;
+  margin: 80px 0 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -214,6 +236,7 @@ input {
   #forms .form_other {
     width: 80%;
     max-width: 250px;
+    margin: 0;
   }
 
   #forms .submit_form .chk_btn {
