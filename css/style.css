@@ -15,6 +15,7 @@ input {
 
 #app {
   position: relative;
+  min-width: 320px;
 }
 
 #header.logo-lg {
@@ -107,7 +108,7 @@ input {
   text-align: center;
 }
 
-#forms .submit_form .sub_btn,
+#forms .submit_form .chk_btn,
 #res .sub_btn {
   margin-right: 30px;
   padding: 10px 20px;
@@ -127,6 +128,10 @@ input {
 
 #forms .submit_form .cancel {
   font-size: 0.9rem;
+}
+
+#forms .s_other {
+  padding: 10px 0;
 }
 
 #res.form_res {
@@ -209,6 +214,10 @@ input {
   #forms .form_other {
     width: 80%;
     max-width: 250px;
+  }
+
+  #forms .submit_form .chk_btn {
+    margin-right: 10px;
   }
 
 }
