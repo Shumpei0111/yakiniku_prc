@@ -23,12 +23,26 @@ new Vue({
     }
   },
   methods: {
-    checkForm: function() {
+    onCheckForm: function() {
       var el = document.getElementById("res");
       var back = document.getElementById("back");
 
       back.classList.add("on");
       el.classList.add("on");
-    }
+    },
+    offCheckForm: function() {
+      var el = document.getElementById("res");
+      var back = document.getElementById("back");
+
+      back.classList.remove("on");
+      el.classList.remove("on");
+    },
+    // offBack: function() {
+    //   var el = document.getElementById("res");
+    //   var back = document.getElementById("back");
+
+    //   back.classList.remove("on");
+    //   el.classList.remove("on");
+    // },
   }
 })

@@ -107,7 +107,8 @@ input {
   text-align: center;
 }
 
-#forms .submit_form .sub_btn {
+#forms .submit_form .sub_btn,
+#res .sub_btn {
   margin-right: 30px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -119,7 +120,8 @@ input {
   text-decoration: none;
 }
 
-#forms .submit_form .sub_btn:hover {
+#forms .submit_form .sub_btn:hover,
+#res .sub_btn:hover {
   opacity: 0.6;
 }
 
@@ -132,7 +134,7 @@ input {
   padding: 0;
   overflow: hidden;
   opacity: 0;
-  transition: 0.8s;
+  transition: 0.3s ease;
 }
 
 #res.on {
@@ -142,12 +144,8 @@ input {
   top: 5%;
   position: fixed;
   z-index: 999;
-  max-width: 80vw;
-  max-height: 90vh;
-  align-items: stretch;
-  display: flex;
-  flex-basis: auto;
-  flex-direction: column;
+  width: 880px;
+  padding: 24px;
 }
 
 #back.on {
@@ -206,6 +204,11 @@ input {
 
   #forms .wide_input {
     width: 250px;
+  }
+
+  #forms .form_other {
+    width: 80%;
+    max-width: 250px;
   }
 
 }
