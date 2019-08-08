@@ -3,6 +3,7 @@ body {
   font-size: 16px;
   font-family: "YuGothic, Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic M", Arial;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -180,6 +181,7 @@ input {
 
 #res .member_lists {
   display: flex;
+  margin: 8px 0 16px;
 }
 
 #res .member_lists .add_item{
@@ -243,8 +245,17 @@ input {
     margin-right: 10px;
   }
 
+  #progress .step {
+    font-size: 0.5rem;
+  }
+
   #res {
     width: 90%;
+  }
+
+  #res .chk_items {
+    width: 80%;
+    margin: auto;
   }
 
 }
