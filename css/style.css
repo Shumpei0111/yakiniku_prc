@@ -243,4 +243,8 @@ input {
     margin-right: 10px;
   }
 
+  #res {
+    width: 90%;
+  }
+
 }
