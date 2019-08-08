@@ -37,12 +37,12 @@ new Vue({
       back.classList.remove("on");
       el.classList.remove("on");
     },
-    offBack: function() {
-      var el = document.getElementById("res");
-      var back = document.getElementById("back");
+    // offBack: function() {
+    //   var el = document.getElementById("res");
+    //   var back = document.getElementById("back");
 
-      back.classList.remove("on");
-      el.classList.remove("on");
-    },
+    //   back.classList.remove("on");
+    //   el.classList.remove("on");
+    // },
   }
 })
