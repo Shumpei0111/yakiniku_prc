@@ -13,7 +13,7 @@ new Vue({
     v_quantity_child: 0,
     v_seat_type: null,
     v_seat_smoke: null,
-    v_others: ""
+    v_others: "特になし"
   },
   computed: {
     v_quantity_res: {
