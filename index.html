@@ -31,6 +31,11 @@
 	</ul>
   <div id="forms" class="form_wrapper">
     <form action="reserve_post.php" method="POST">
+			<div class="form search">
+				<div class="search_cst">
+					<p>顧客リストから探す</p>
+				</div>
+			</div>
 			<div class="form">
 				<label class="f_title mst" for="phone_no">電話番号</label>
 				<input required v-model="v_phone_no" type="tel" pattern="[\d]*" title="半角・ハイフンなしの数字を入力してください" class="w100 wide_input" id="phone_no" name="phone_no" placeholder="012033334444（半角・ハイフンなし）" value="" minlength="11" maxlength="11">
@@ -41,7 +46,7 @@
 			</div>
 			<div class="form">
 				<label class="f_title mst" for="reserve_date">予約日</label>
-				<input required v-model="v_reserve_date" type="text" class="w100" id="reserve_date" name="reserve_date" placeholder="YYYY-MM-DD" value="">
+				<input required v-model="v_reserve_date" type="date" class="w100" id="reserve_date" name="reserve_date" placeholder="YYYY-MM-DD" value="">
 			</div>
 			<div class="form">
 				<label class="f_title mst" for="reserve_time">予約時刻</label>
@@ -121,7 +126,7 @@
 				<ul class="add_item">
 					<li class="add_form_res">{{ v_client_name }}</li>
 				</ul>
-				<li class="item_ttl">予約日</li>
+				<li class="item_ttl">予約日（年月日）</li>
 				<ul class="add_item">
 					<li class="add_form_res">{{ v_reserve_date }}</li>
 				</ul>

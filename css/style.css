@@ -60,6 +60,22 @@ input {
   padding: 20px 10px;
 }
 
+#forms .form.search{
+  padding: 0 10px;
+  border-bottom: none;
+}
+
+#forms .form .search_cst {
+  font-size:0.8rem;
+  background-color: #969696;
+  width: 200px;
+  margin: 16px 0;
+  text-align: center;
+  padding: 8px;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
 #forms .form:first-child {
   border-top: 2px solid #af1a1a
 }
