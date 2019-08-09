@@ -112,7 +112,7 @@
 				<textarea v-model="v_others" name="others" id="others_notice" cols="50" rows="6" placeholder="備考欄" class="form_other">{{ v_others }}</textarea>
 			</div>
 		<div class="arrow"></div>
-		<div id="res" class="form_res">
+		<ul id="res" class="form_res">
 			<div class="staff_attention">
 				<p class="att_ttl">予約内容確認</p>
 				<p class="att_txt">内容を確認し、復唱してください</p>
@@ -162,6 +162,23 @@
 						<li class="add_form_res">{{ v_others }}</li>
 				</ul>
 			</ul>
+			<ul class="choose_staff" >
+				<label class="rsv_staff_names" for="reserve_staff">受付スタッフ</label>
+				<li class="included staff_radio_btn">
+					<input required type="radio" id="staff_000" name="reserve_staff" class="chk_staff" value="店長"><label for="staff_000">店長</label>
+				</li>
+				<li class="included staff_radio_btn">
+					<input required type="radio" id="staff_001" name="reserve_staff" class="chk_staff" value="Shumpei"><label for="staff_001">Shumpei</label>
+				</li>
+				<li class="included staff_radio_btn">
+					<input required type="radio" id="staff_002" name="reserve_staff" class="chk_staff" value="女将"><label for="staff_002">塾長</label>
+				</li>
+				<li class="included staff_radio_btn">
+					<input required type="radio" id="staff_003" name="reserve_staff" class="chk_staff" value="大将"><label for="staff_003">大将</label>
+				</li>
+				<li class="included staff_radio_btn">
+						<input required type="radio" id="staff_004" name="reserve_staff" class="chk_staff" value="アルバイト"><label for="staff_004">アルバイト</label>
+					</li>
 			</ul>
 			<div class="submit_form">
 				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">

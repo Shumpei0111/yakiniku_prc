@@ -179,7 +179,8 @@ input {
   margin: 54px auto;
 }
 
-#res .staff_attention {
+#res .staff_attention,
+#res .choose_staff {
   margin-bottom: 24px;
   text-align: center;
   padding: 24px;
@@ -194,6 +195,21 @@ input {
 #res .chk_items .add_item {
   margin-top: 8px;
   margin-bottom: 24px;
+}
+
+#res .choose_staff {
+  padding: 24px 0;
+  text-align: left;
+}
+
+#res .choose_staff .staff_radio_btn {
+  display: flex;
+  padding: 6px 0;
+}
+
+#res .chk_staff {
+  margin-left: 24px;
+  margin-right: 12px;
 }
 
 #res .member_lists {
