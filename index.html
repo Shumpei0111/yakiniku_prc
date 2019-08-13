@@ -29,7 +29,7 @@
 		<li class="step now">予約内容の入力</li>
 		<li class="step">予約完了</li>
 	</ul>
-  <div id="forms" class="form_wrapper">
+  <ul id="forms" class="form_wrapper">
     <form action="reserve_post.php" method="POST">
 			<div class="form search">
 				<div class="search_cst">
@@ -112,78 +112,81 @@
 				<textarea v-model="v_others" name="others" id="others_notice" cols="50" rows="6" placeholder="備考欄" class="form_other">{{ v_others }}</textarea>
 			</div>
 		<div class="arrow"></div>
-		<ul id="res" class="form_res">
-			<div class="staff_attention">
-				<p class="att_ttl">予約内容確認</p>
-				<p class="att_txt">内容を確認し、復唱してください</p>
-			</div>
-			<ul class="chk_items">
-				<li class="item_ttl">電話番号</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_phone_no }}</li>
-				</ul>
-				<li class="item_ttl">お名前</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_client_name }}</li>
-				</ul>
-				<li class="item_ttl">予約日（年月日）</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_reserve_date }}</li>
-				</ul>
-				<li class="item_ttl">予約時刻</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_reserve_time }}</li>
-				</ul>
-				<!-- <li class="item_ttl">人数</li> -->
-				<ul class="member_lists">
-					<li>大人</li>
+		<p class="switch_btn" @click="inputResShow = !inputResShow">{{ resBtnField }}</p>
+		<transition name="fade">
+			<ul id="res" class="form_res" v-if="inputResShow">
+				<div class="staff_attention">
+					<p class="att_ttl">予約内容確認</p>
+					<p class="att_txt">内容を確認し、復唱してください</p>
+				</div>
+				<ul class="chk_items">
+					<li class="item_ttl">電話番号</li>
 					<ul class="add_item">
-						<li class="add_form_res">{{ v_quantity_adult }}名</li>
+						<li class="add_form_res">{{ v_phone_no }}</li>
 					</ul>
-					<li>子供</li>
+					<li class="item_ttl">お名前</li>
 					<ul class="add_item">
-						<li class="add_form_res">{{ v_quantity_child }}名</li>
+						<li class="add_form_res">{{ v_client_name }}</li>
+					</ul>
+					<li class="item_ttl">予約日（年月日）</li>
+					<ul class="add_item">
+						<li class="add_form_res">{{ v_reserve_date }}</li>
+					</ul>
+					<li class="item_ttl">予約時刻</li>
+					<ul class="add_item">
+						<li class="add_form_res">{{ v_reserve_time }}</li>
+					</ul>
+					<!-- <li class="item_ttl">人数</li> -->
+					<ul class="member_lists">
+						<li>大人</li>
+						<ul class="add_item">
+							<li class="add_form_res">{{ v_quantity_adult }}名</li>
+						</ul>
+						<li>子供</li>
+						<ul class="add_item">
+							<li class="add_form_res">{{ v_quantity_child }}名</li>
+						</ul>
+					</ul>
+					<li class="item_ttl">合計人数</li>
+					<ul class="add_item">
+						<li class="add_form_res">{{ v_quantity_adult + v_quantity_child }}名</li>
+					</ul>
+					<li class="item_ttl">席タイプ</li>
+					<ul class="add_item">
+						<li class="add_form_res">{{ v_seat_type }}</li>
+					</ul>
+					<li class="item_ttl">喫煙</li>
+					<ul class="add_item">
+						<li class="add_form_res">{{ v_seat_smoke }}</li>
+					</ul>
+					<li class="item_ttl">備考</li>
+					<ul class="add_item">
+							<li class="add_form_res">{{ v_others }}</li>
 					</ul>
 				</ul>
-				<li class="item_ttl">合計人数</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_quantity_adult + v_quantity_child }}名</li>
-				</ul>
-				<li class="item_ttl">席タイプ</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_seat_type }}</li>
-				</ul>
-				<li class="item_ttl">喫煙</li>
-				<ul class="add_item">
-					<li class="add_form_res">{{ v_seat_smoke }}</li>
-				</ul>
-				<li class="item_ttl">備考</li>
-				<ul class="add_item">
-						<li class="add_form_res">{{ v_others }}</li>
-				</ul>
-			</ul>
-			<ul class="choose_staff" >
-				<label class="rsv_staff_names" for="reserve_staff">受付スタッフ</label>
-				<li class="included staff_radio_btn">
-					<input required type="radio" id="staff_000" name="reserve_staff" class="chk_staff" value="店長"><label for="staff_000">店長</label>
-				</li>
-				<li class="included staff_radio_btn">
-					<input required type="radio" id="staff_001" name="reserve_staff" class="chk_staff" value="Shumpei"><label for="staff_001">Shumpei</label>
-				</li>
-				<li class="included staff_radio_btn">
-					<input required type="radio" id="staff_002" name="reserve_staff" class="chk_staff" value="女将"><label for="staff_002">塾長</label>
-				</li>
-				<li class="included staff_radio_btn">
-					<input required type="radio" id="staff_003" name="reserve_staff" class="chk_staff" value="大将"><label for="staff_003">大将</label>
-				</li>
-				<li class="included staff_radio_btn">
-						<input required type="radio" id="staff_004" name="reserve_staff" class="chk_staff" value="アルバイト"><label for="staff_004">アルバイト</label>
+				<ul class="choose_staff" >
+					<label class="rsv_staff_names" for="reserve_staff">受付スタッフ</label>
+					<li class="included staff_radio_btn">
+						<input required type="radio" id="staff_000" name="reserve_staff" class="chk_staff" value="店長"><label for="staff_000">店長</label>
 					</li>
+					<li class="included staff_radio_btn">
+						<input required type="radio" id="staff_001" name="reserve_staff" class="chk_staff" value="Shumpei"><label for="staff_001">Shumpei</label>
+					</li>
+					<li class="included staff_radio_btn">
+						<input required type="radio" id="staff_002" name="reserve_staff" class="chk_staff" value="女将"><label for="staff_002">塾長</label>
+					</li>
+					<li class="included staff_radio_btn">
+						<input required type="radio" id="staff_003" name="reserve_staff" class="chk_staff" value="大将"><label for="staff_003">大将</label>
+					</li>
+					<li class="included staff_radio_btn">
+							<input required type="radio" id="staff_004" name="reserve_staff" class="chk_staff" value="アルバイト"><label for="staff_004">アルバイト</label>
+					</li>
+				</ul>
 			</ul>
-			<div class="submit_form">
-				<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
-				<a href="/" class="cancel">予約キャンセル</a>
-			</div>
+		</transition>
+		<div class="submit_form">
+			<input type="submit" id="btnSubmit" class="sub_btn" name="btnSubmit" value="予約する">
+			<a href="/" class="cancel">予約キャンセル</a>
 		</div>
 	</form>
 	</div>

@@ -22,16 +22,26 @@ new Vue({
     v_quantity_child: 0,
     v_seat_type: null,
     v_seat_smoke: null,
-    v_others: "特になし"
+    v_others: "特になし",
+    inputResShow: true
   },
   computed: {
     v_quantity_res: {
       get: function() {
         return this.v_quantity_adult + this.v_quantity_child
-      },
+      }
+    },
+    resBtnField: function() {
+      if(this.inputResShow) {
+        return "入力内容を非表示にする"
+      }
+
+      if(!this.inputResShow) {
+        return "入力内容を表示する"
+      }
     }
   },
   methods: {
     
-  }
+  },
 })

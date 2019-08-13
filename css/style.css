@@ -129,13 +129,14 @@ input {
 }
 
 #forms .submit_form {
+  margin-top: 30px;
   padding: 20px;
   font-size: 1.5rem;
   text-align: center;
 }
 
 #forms .submit_form .chk_btn,
-#res .sub_btn {
+.sub_btn {
   margin-right: 30px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -174,9 +175,22 @@ input {
   border-top: 1px solid #bebebe;
 }
 
+#forms .switch_btn {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 #res {
   width: 60%;
   margin: 54px auto;
+  transition: .5s ease;
 }
 
 #res .staff_attention,
