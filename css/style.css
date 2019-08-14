@@ -291,7 +291,7 @@ input {
   content: "";
   position: absolute;
   width: 0;
-  /* height: 1px; */
+  height: 1px;
   border-top: solid 14px transparent;
   border-right: solid 16px transparent;
   border-bottom: solid 16px transparent;
