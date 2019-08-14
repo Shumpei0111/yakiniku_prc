@@ -292,7 +292,7 @@ input {
   position: absolute;
   width: 0;
   height: 1px;
-  border-top: solid 15px transparent;
+  border-top: solid 14px transparent;
   border-right: solid 15px transparent;
   border-bottom: solid 15px transparent;
   border-left: solid 15px #e73838;
@@ -325,6 +325,10 @@ input {
 
   #forms .submit_form .chk_btn {
     margin-right: 10px;
+  }
+
+  #forms .choice .included {
+    padding-top: 8px;
   }
 
   #progress .step {
