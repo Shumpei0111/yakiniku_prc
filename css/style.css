@@ -40,8 +40,18 @@ input {
   padding: 23px;
 }
 
-#forms {
-  margin: 20px 0 40px;;
+.navi_items {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.navi_items .for_list {
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #008dde;
+  border-radius: 3px;
+  font-size: 14px;
 }
 
 .w30 {
@@ -178,6 +188,10 @@ input {
 #forms .switch_btn {
   text-align: center;
   margin-top: 50px;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #af1a1a;
+  font-size: 14px;
 }
 
 .fade-enter-active, .fade-leave-active {

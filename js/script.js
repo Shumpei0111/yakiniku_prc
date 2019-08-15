@@ -23,7 +23,7 @@ new Vue({
     v_seat_type: null,
     v_seat_smoke: null,
     v_others: "特になし",
-    inputResShow: true
+    inputResShow: false
   },
   computed: {
     v_quantity_res: {
@@ -33,11 +33,11 @@ new Vue({
     },
     resBtnField: function() {
       if(this.inputResShow) {
-        return "入力内容を非表示にする"
+        return "入力内容を非表示にする";
       }
 
       if(!this.inputResShow) {
-        return "入力内容を表示する"
+        return "入力内容を表示する";
       }
     }
   },
